@@ -6,11 +6,14 @@ $string = "Con le nostre ripetute accuse di tradimento, la flagellammo fino a fa
 So bene che ti tediavo con le mie continue e ripetute lamentele.
 Solo dopo le mie ripetute proteste hanno stornato dal conto quella spesa che non avevo fatto.";
 
+$badword = $_GET['word'];
 
 
 // frase con parola modicifata con (***)
 
-$new_string = str_replace('ripetute','(***)',$string);
+$change = str_replace($badword, '***', $string);
+
+
 
 
 
@@ -28,8 +31,11 @@ $new_string = str_replace('ripetute','(***)',$string);
 <body>
     <h2>Questa è la frase da modificare</h2>
     <p><?php echo $string ?></p>
+    <p>La frase è lunga <?= strlen ($string) ?> caratteri!</p>
+    <hr />
     <h2>Questa è la frase modificata</h2>
-    <p><?php echo $new_string ?></p>
+    <p><?php echo $change ?></p> 
+    <p>La frase è lunga <?= strlen ($change) ?> caratteri!</p>
 
 </body>
 </html>
